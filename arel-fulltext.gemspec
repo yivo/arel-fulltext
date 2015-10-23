@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--main", "README.md"]
   s.extra_rdoc_files = ["LICENSE", "README.md"]
 
-  s.files         = FileList['**/*.rb', 'LICENSE', 'README.md'].to_a
+  s.files         = `git ls-files -z`.split("\x0")
   s.require_paths = ["lib"]
 
   s.add_development_dependency('minitest', '~> 5.4')
